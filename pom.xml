@@ -9,6 +9,7 @@
 	<modules>
 		<module>task001</module>
 		<module>task002</module>
+		<module>leetcode</module>
 	</modules>
 	<licenses>
 		<license>
