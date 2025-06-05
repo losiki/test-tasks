@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:digifuturedb;DATABASE_TO_UPPER=FALSE;CASE_INSENSITIVE_IDENTIFIERS=TRUE
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  liquibase:
+    change-log: classpath:liquibase/schema.xml
+# camel configuration
+camel:
+  component:
+    mail:
+      from: Sender <noreply@example.org>
+      password: password
+      username: name
+# camel route properties
+processing:
+  uri: direct:send-log
+message:
+  template: template.ftl
+smtp:
+  server: localhost:25

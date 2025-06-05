@@ -1,0 +1,70 @@
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+	<changeSet author="Egor Shchegolkov" id="0000">
+<!--  vacancy -->
+		<createTable tableName="vacancies">
+			<column name="vacancy_id" type="integer" autoIncrement="true">
+				<constraints primaryKey="true"
+					primaryKeyName="pk_vacancies" nullable="false" />
+			</column>
+			<column name="name" type="varchar(250)">
+				<constraints nullable="false" />
+			</column>
+			<column name="description" type="text">
+			</column>
+			<column name="position" type="varchar(250)">
+				<constraints nullable="false" />
+			</column>
+			<column name="sallary" type="integer">
+				<constraints nullable="false" />
+			</column>
+			<column name="required_experience" type="text">
+			</column>
+			<column name="city" type="varchar(250)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+		<createIndex tableName="vacancies"
+			indexName="idx_vacancy_city">
+			<column name="city"/>
+		</createIndex>
+		<createIndex tableName="vacancies" indexName="idx_vacancy_poisition">
+			<column name="position"/>
+		</createIndex>
+		<createIndex tableName="vacancies" indexName="idx_vacancy_name">
+			<column name="name"/>
+		</createIndex>
+<!--  subscriber -->
+		<createTable tableName="subscribers">
+			<column name="subscriber_id" type="integer" autoIncrement="true">
+				<constraints primaryKey="true" primaryKeyName="pk_subscribers" nullable="false"/>
+			</column>
+			<column name="email" type="varchar(250)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="fullname" type="varchar(250)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="position" type="varchar(250)">
+				<constraints nullable="false" />
+			</column>
+			<column name="city" type="varchar(250)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+		<createIndex tableName="subscribers"
+			indexName="idx_subscriber_email">
+			<column name="email"/>
+		</createIndex>
+		<createIndex tableName="subscribers"
+			indexName="idx_subscriber_city">
+			<column name="city"/>
+		</createIndex>
+		<createIndex tableName="subscribers" indexName="idx_subscriber_poisition">
+			<column name="position"/>
+		</createIndex>
+	</changeSet>
+
+</databaseChangeLog>
