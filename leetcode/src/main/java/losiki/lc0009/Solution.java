@@ -14,10 +14,10 @@ class Solution {
 		}
 
 		int y = 0;
-		for(int t = x; t != 0; t/=10) {
-			y = y*10 + t%10;
+		for (int t = x; t != 0; t /= 10) {
+			y = y * 10 + t % 10;
 		}
 
-		return y==x;
+		return y == x;
 	}
 }

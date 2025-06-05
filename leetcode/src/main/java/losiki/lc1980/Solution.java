@@ -13,7 +13,7 @@ public class Solution {
 	public String findDifferentBinaryString(String[] nums) {
 		char[] response = new char[nums.length];
 		for (int i = 0; i < nums.length; i++) {
-			if(nums[i].charAt(i) == '0') {
+			if (nums[i].charAt(i) == '0') {
 				response[i] = '1';
 			} else {
 				response[i] = '0';
